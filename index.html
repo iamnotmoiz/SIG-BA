@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdul Moiz Janjua | Candidate for SIG UK</title>
+    <!-- Tailwind CSS for Layout -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- GSAP for High-Performance Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Fonts: Oswald for headings (Industrial look), Inter for body -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* SIG Corporate Identity Colors */
+            --sig-red: #E30613; 
+            --sig-dark-blue: #002D5B;
+            --sig-black: #1A1A1A;
+            --sig-grey: #F3F4F6;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: var(--sig-black);
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, .brand-font {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+        }
+
+        /* Geometric Design Elements */
+        .clip-diagonal {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+        
+        .clip-diagonal-reverse {
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .bg-grid-pattern {
+            background-image: linear-gradient(to right, #e5e7eb 1px, transparent 1px),
+                            linear-gradient(to bottom, #e5e7eb 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .hero-text-shadow {
+            text-shadow: 4px 4px 0px rgba(0,0,0,0.05);
+        }
+
+        /* Interactive Cards */
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: var(--sig-red);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--sig-red);
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b9050f;
+        }
+
+        /* Loader Animation */
+        .loader-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--sig-dark-blue);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.8s cubic-bezier(0.7, 0, 0.3, 1);
+        }
+        
+        .progress-bar-container {
+            width: 200px;
+            height: 2px;
+            background: rgba(255,255,255,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            background: var(--sig-red);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Abstract Shape Animations */
+        .floating-shape {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Intro Loader -->
+    <div class="loader-overlay" id="loader">
+        <div class="text-center">
+            <h1 class="text-white text-5xl font-bold brand-font tracking-widest mb-6">SIG UK</h1>
+            <div class="progress-bar-container mx-auto">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <p class="text-white/60 mt-4 text-xs font-mono tracking-widest">INITIALIZING CANDIDATE PROFILE...</p>
+        </div>
+    </div>
+
+    <!-- Sticky Navigation -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300 transform translate-y-[-100%]" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="w-10 h-10 bg-[#E30613] text-white flex items-center justify-center font-bold brand-font text-xl rounded-sm shadow-lg">SIG</div>
+                    <div class="hidden sm:block">
+                        <span class="block text-xs text-gray-400 font-mono leading-none">CANDIDATE:</span>
+                        <span class="text-lg font-bold text-[#002D5B] tracking-tight leading-none">A. MOIZ JANJUA</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#expertise" class="text-gray-600 hover:text-[#E30613] text-sm font-bold uppercase tracking-wide transition-colors py-2">Expertise</a>
+                    <a href="#impact" class="text-gray-600 hover:text-[#E30613] text-sm font-bold uppercase tracking-wide transition-colors py-2">Impact</a>
+                    <a href="#timeline" class="text-gray-600 hover:text-[#E30613] text-sm font-bold uppercase tracking-wide transition-colors py-2">Journey</a>
+                    <a href="#contact" class="px-6 py-2 bg-[#E30613] text-white font-bold text-sm uppercase tracking-wide rounded-sm hover:bg-[#b9050f] transition-all transform hover:scale-105 shadow-md">Hire Me</a>
+                </div>
+                <!-- Mobile Menu Icon -->
+                <div class="md:hidden text-gray-800">
+                    <i data-lucide="menu" class="w-8 h-8"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-grid-pattern">
+        <!-- Abstract Background Shapes -->
+        <div class="absolute top-0 right-0 w-2/5 h-full bg-gray-50 -z-10 clip-diagonal-reverse hidden lg:block border-l border-gray-100"></div>
+        <div class="absolute top-20 right-20 w-72 h-72 bg-red-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
+        <div class="absolute top-20 right-80 w-72 h-72 bg-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                
+                <!-- Text Content -->
+                <div class="space-y-8 hero-content z-10">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 border border-blue-100 rounded-sm">
+                        <span class="w-2 h-2 rounded-full bg-[#002D5B] animate-pulse"></span>
+                        <span class="text-[#002D5B] text-xs font-bold tracking-widest uppercase">Application for Record #137</span>
+                    </div>
+                    
+                    <h1 class="text-6xl md:text-8xl font-bold text-gray-900 leading-[0.9] hero-text-shadow">
+                        BUILT FOR <br>
+                        <span class="text-[#E30613]">GROWTH</span>
+                    </h1>
+                    
+                    <p class="text-xl text-gray-600 max-w-lg leading-relaxed border-l-4 border-[#E30613] pl-6">
+                        Data-driven Operations Manager combining <strong>Amazon logistics precision</strong> with <strong>Fintech analytical rigor</strong>. Ready to optimize SIG's supply chain and drive branch performance.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <button onclick="document.getElementById('impact').scrollIntoView({behavior: 'smooth'})" class="group px-8 py-4 bg-[#002D5B] text-white font-bold text-sm uppercase tracking-wide rounded-sm hover:bg-[#001f3f] transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-3">
+                            View Performance Metrics
+                            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                        <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" class="px-8 py-4 border-2 border-gray-200 text-gray-700 font-bold text-sm uppercase tracking-wide rounded-sm hover:border-[#E30613] hover:text-[#E30613] transition-all bg-white hover:bg-red-50">
+                            Download CV
+                        </button>
+                    </div>
+
+                    <!-- Key Stats -->
+                    <div class="grid grid-cols-3 gap-8 pt-10 border-t border-gray-200">
+                        <div>
+                            <p class="text-4xl font-bold text-[#E30613] brand-font counter" data-target="13">0%</p>
+                            <p class="text-xs text-gray-500 font-bold uppercase tracking-wider mt-1">Productivity<br>Boost</p>
+                        </div>
+                        <div>
+                            <p class="text-4xl font-bold text-[#E30613] brand-font counter" data-target="400">0</p>
+                            <p class="text-xs text-gray-500 font-bold uppercase tracking-wider mt-1">Hours Saved<br>Annually</p>
+                        </div>
+                        <div>
+                            <p class="text-4xl font-bold text-[#E30613] brand-font counter" data-target="105">0</p>
+                            <p class="text-xs text-gray-500 font-bold uppercase tracking-wider mt-1">Team Size<br>Managed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Element -->
+                <div class="relative h-full flex justify-center lg:justify-end hero-visual perspective-1000">
+                    <!-- 3D Card Effect Container -->
+                    <div class="relative w-full max-w-md aspect-[4/5] floating-shape">
+                        <!-- Decorative Backing -->
+                        <div class="absolute -inset-4 bg-gradient-to-tr from-[#E30613] to-[#002D5B] opacity-10 rounded-sm transform rotate-3"></div>
+                        
+                        <!-- Main Card -->
+                        <div class="absolute inset-0 bg-white shadow-2xl rounded-sm border border-gray-200 overflow-hidden flex flex-col">
+                            <!-- Card Header -->
+                            <div class="bg-[#002D5B] p-6 text-white flex justify-between items-center">
+                                <div>
+                                    <h3 class="text-xl font-bold">Operational Audit</h3>
+                                    <p class="text-xs text-blue-200 uppercase tracking-wider">Candidate Capability Matrix</p>
+                                </div>
+                                <i data-lucide="clipboard-check" class="w-8 h-8 text-[#E30613]"></i>
+                            </div>
+
+                            <!-- Card Body -->
+                            <div class="p-8 flex-1 flex flex-col justify-center space-y-6">
+                                <!-- Skill Bars -->
+                                <div class="space-y-4">
+                                    <div class="skill-group">
+                                        <div class="flex justify-between text-xs font-bold uppercase mb-2 text-gray-600">
+                                            <span>Supply Chain Logistics</span>
+                                            <span class="text-[#E30613]">95%</span>
+                                        </div>
+                                        <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+                                            <div class="h-full bg-[#002D5B] w-0 skill-fill" data-width="95%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-group">
+                                        <div class="flex justify-between text-xs font-bold uppercase mb-2 text-gray-600">
+                                            <span>Data Analysis (SQL/Excel)</span>
+                                            <span class="text-[#E30613]">90%</span>
+                                        </div>
+                                        <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+                                            <div class="h-full bg-[#002D5B] w-0 skill-fill" data-width="90%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-group">
+                                        <div class="flex justify-between text-xs font-bold uppercase mb-2 text-gray-600">
+                                            <span>Lean Six Sigma</span>
+                                            <span class="text-[#E30613]">Certified</span>
+                                        </div>
+                                        <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+                                            <div class="h-full bg-[#22c55e] w-0 skill-fill" data-width="100%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-group">
+                                        <div class="flex justify-between text-xs font-bold uppercase mb-2 text-gray-600">
+                                            <span>Team Leadership</span>
+                                            <span class="text-[#E30613]">98%</span>
+                                        </div>
+                                        <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+                                            <div class="h-full bg-[#002D5B] w-0 skill-fill" data-width="98%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card Footer -->
+                            <div class="bg-gray-50 p-4 border-t border-gray-100 flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-white border-2 border-[#E30613] p-0.5 shadow-sm overflow-hidden">
+                                    <!-- Placeholder for Headshot if available, utilizing initials -->
+                                    <div class="w-full h-full bg-gray-200 flex items-center justify-center text-[#E30613] font-bold">AJ</div>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-gray-900">Abdul Moiz Janjua</p>
+                                    <p class="text-xs text-gray-500 uppercase">M.Sc. International Business</p>
+                                </div>
+                                <div class="ml-auto">
+                                    <span class="px-2 py-1 bg-green-100 text-green-700 text-[10px] font-bold uppercase rounded-sm border border-green-200">Verified</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Me / Strategic Alignment Section -->
+    <section id="expertise" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 max-w-3xl mx-auto">
+                <span class="text-[#E30613] font-bold tracking-[0.2em] uppercase text-xs">Strategic Alignment</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-6">Why I Fit The SIG Mold</h2>
+                <div class="w-24 h-1 bg-[#E30613] mx-auto"></div>
+                <p class="text-gray-600 mt-6 text-lg">SIG leads the market through efficiency and reliability. My career has been built on the same pillars: <strong>optimizing workflows</strong> and <strong>delivering on promises</strong>.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Alignment Card 1 -->
+                <div class="bg-white p-10 rounded-sm border border-gray-100 card-hover group shadow-sm hover:shadow-xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i data-lucide="bar-chart-2" class="w-32 h-32 text-[#002D5B]"></i>
+                    </div>
+                    <div class="w-16 h-16 bg-blue-50 rounded-sm flex items-center justify-center text-[#002D5B] mb-8 group-hover:bg-[#002D5B] group-hover:text-white transition-colors">
+                        <i data-lucide="database" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Data Mastery</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">At <strong>Traction Fintech</strong> and <strong>Amazon</strong>, I leveraged SQL and BI tools to turn raw data into actionable growth strategies, saving hundreds of hours.</p>
+                    <a href="#" class="text-[#E30613] font-bold text-sm uppercase tracking-wide flex items-center gap-2 group-hover:gap-3 transition-all">
+                        Technical Skills <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Alignment Card 2 -->
+                <div class="bg-white p-10 rounded-sm border border-gray-100 card-hover group shadow-sm hover:shadow-xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i data-lucide="package" class="w-32 h-32 text-[#E30613]"></i>
+                    </div>
+                    <div class="w-16 h-16 bg-red-50 rounded-sm flex items-center justify-center text-[#E30613] mb-8 group-hover:bg-[#E30613] group-hover:text-white transition-colors">
+                        <i data-lucide="truck" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Logistics Ops</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Managing <strong>Gorillas Dark Stores</strong> and <strong>Amazon FCs</strong> taught me the art of the "Last Mile" and internal flow. I improve dispatch times and reduce error rates.</p>
+                    <a href="#" class="text-[#E30613] font-bold text-sm uppercase tracking-wide flex items-center gap-2 group-hover:gap-3 transition-all">
+                        Ops Experience <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Alignment Card 3 -->
+                <div class="bg-white p-10 rounded-sm border border-gray-100 card-hover group shadow-sm hover:shadow-xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i data-lucide="users" class="w-32 h-32 text-[#002D5B]"></i>
+                    </div>
+                    <div class="w-16 h-16 bg-blue-50 rounded-sm flex items-center justify-center text-[#002D5B] mb-8 group-hover:bg-[#002D5B] group-hover:text-white transition-colors">
+                        <i data-lucide="users" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Leadership</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">From founding <strong>SplitTrip</strong> to leading 35 specialists at Amazon. I employ Situational Leadership to develop teams that are autonomous and high-performing.</p>
+                    <a href="#" class="text-[#E30613] font-bold text-sm uppercase tracking-wide flex items-center gap-2 group-hover:gap-3 transition-all">
+                        Management Style <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deep Dive / Impact Section (Dark Mode) -->
+    <section id="impact" class="py-24 bg-[#1A1A1A] text-white clip-diagonal relative overflow-hidden">
+        <!-- Grid Background -->
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#E30613 1px, transparent 1px); background-size: 30px 30px;"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold brand-font mb-2">Measurable Impact</h2>
+                    <p class="text-gray-400 max-w-xl">My value isn't just theoretical. Here is the data from my recent roles.</p>
+                </div>
+                <div class="hidden md:flex gap-2">
+                    <span class="h-1 w-12 bg-[#E30613]"></span>
+                    <span class="h-1 w-4 bg-gray-600"></span>
+                    <span class="h-1 w-4 bg-gray-600"></span>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Impact Row 1 -->
+                <div class="group relative bg-white/5 border border-white/10 p-8 hover:bg-white/10 transition-all cursor-default overflow-hidden rounded-sm impact-row">
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-[#E30613] h-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                        <div class="md:col-span-3">
+                            <span class="text-[10px] font-bold text-[#E30613] tracking-widest uppercase mb-1 block">Traction Fintech</span>
+                            <h3 class="text-2xl font-bold text-white">Process Efficiency</h3>
+                        </div>
+                        <div class="md:col-span-6">
+                            <p class="text-gray-300 text-sm md:text-base">Streamlined error reporting and daily processes. Eliminated manual redundancy through automation and better data handling.</p>
+                        </div>
+                        <div class="md:col-span-3 md:text-right flex items-center md:justify-end gap-4">
+                            <div class="text-right">
+                                <span class="text-4xl font-bold text-white block font-mono">+400</span>
+                                <span class="text-[10px] text-gray-400 uppercase tracking-wider">Hours Saved/Year</span>
+                            </div>
+                            <i data-lucide="clock" class="w-8 h-8 text-gray-600 group-hover:text-[#E30613] transition-colors"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Impact Row 2 -->
+                <div class="group relative bg-white/5 border border-white/10 p-8 hover:bg-white/10 transition-all cursor-default overflow-hidden rounded-sm impact-row">
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-[#E30613] h-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                        <div class="md:col-span-3">
+                            <span class="text-[10px] font-bold text-[#E30613] tracking-widest uppercase mb-1 block">Amazon UK</span>
+                            <h3 class="text-2xl font-bold text-white">Productivity</h3>
+                        </div>
+                        <div class="md:col-span-6">
+                            <p class="text-gray-300 text-sm md:text-base">Deep dived KPIs for 8 Fulfillment Centers in Europe. Formulated actionable plans that directly lifted output.</p>
+                        </div>
+                        <div class="md:col-span-3 md:text-right flex items-center md:justify-end gap-4">
+                            <div class="text-right">
+                                <span class="text-4xl font-bold text-white block font-mono">13%</span>
+                                <span class="text-[10px] text-gray-400 uppercase tracking-wider">Productivity Lift</span>
+                            </div>
+                            <i data-lucide="trending-up" class="w-8 h-8 text-gray-600 group-hover:text-[#E30613] transition-colors"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Impact Row 3 -->
+                <div class="group relative bg-white/5 border border-white/10 p-8 hover:bg-white/10 transition-all cursor-default overflow-hidden rounded-sm impact-row">
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-[#E30613] h-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                        <div class="md:col-span-3">
+                            <span class="text-[10px] font-bold text-[#E30613] tracking-widest uppercase mb-1 block">Tresmark</span>
+                            <h3 class="text-2xl font-bold text-white">UX Optimization</h3>
+                        </div>
+                        <div class="md:col-span-6">
+                            <p class="text-gray-300 text-sm md:text-base">Redesigned company website and digital workspace UI/UX to improve customer retention and engagement.</p>
+                        </div>
+                        <div class="md:col-span-3 md:text-right flex items-center md:justify-end gap-4">
+                            <div class="text-right">
+                                <span class="text-4xl font-bold text-white block font-mono">-19%</span>
+                                <span class="text-[10px] text-gray-400 uppercase tracking-wider">Bounce Rate</span>
+                            </div>
+                            <i data-lucide="mouse-pointer-2" class="w-8 h-8 text-gray-600 group-hover:text-[#E30613] transition-colors"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Timeline -->
+    <section id="timeline" class="py-24 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-16 brand-font uppercase">Professional Trajectory</h2>
+            
+            <div class="relative border-l-2 border-gray-200 ml-4 md:ml-0 space-y-16">
+                
+                <!-- Timeline Item 1 -->
+                <div class="relative flex flex-col md:flex-row items-start timeline-item opacity-0 transform translate-y-8">
+                    <div class="absolute -left-2.5 md:left-1/2 md:-ml-2.5 w-5 h-5 bg-[#E30613] border-4 border-white shadow-md rounded-full z-10"></div>
+                    
+                    <div class="md:w-1/2 md:pr-12 md:text-right pl-8 md:pl-0">
+                        <span class="inline-block px-2 py-1 bg-red-100 text-[#E30613] text-xs font-bold rounded mb-2">Most Recent</span>
+                        <h3 class="text-xl font-bold text-gray-900">Onboarding Officer</h3>
+                        <p class="text-gray-600 font-medium mb-1">Traction Fintech | London</p>
+                        <p class="text-gray-400 text-xs uppercase tracking-widest">Jun 2025 - Nov 2025</p>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12 pl-8 mt-4 md:mt-0">
+                        <p class="text-gray-600 leading-relaxed text-sm">Focused on data integrity and process engineering. Saved 400+ annual hours by automating error reporting and streamlining client onboarding.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="relative flex flex-col md:flex-row items-start timeline-item opacity-0 transform translate-y-8">
+                    <div class="absolute -left-2.5 md:left-1/2 md:-ml-2.5 w-5 h-5 bg-[#002D5B] border-4 border-white shadow-md rounded-full z-10"></div>
+                    
+                    <div class="md:w-1/2 md:pr-12 md:text-right pl-8 md:pl-0 hidden md:block">
+                        <p class="text-gray-600 leading-relaxed text-sm">Managed central flow for UK & Europe. Led 35 specialists. Improved on-time dispatch by 17% across 8 Fulfillment Centers.</p>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12 pl-8">
+                        <h3 class="text-xl font-bold text-gray-900">Area Manager (ECFT)</h3>
+                        <p class="text-gray-600 font-medium mb-1">Amazon | Tilbury</p>
+                        <p class="text-gray-400 text-xs uppercase tracking-widest">Dec 2023 - July 2024</p>
+                        <p class="text-gray-600 leading-relaxed text-sm md:hidden mt-4">Managed central flow for UK & Europe. Led 35 specialists. Improved on-time dispatch by 17% across 8 Fulfillment Centers.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="relative flex flex-col md:flex-row items-start timeline-item opacity-0 transform translate-y-8">
+                    <div class="absolute -left-2.5 md:left-1/2 md:-ml-2.5 w-5 h-5 bg-gray-400 border-4 border-white shadow-md rounded-full z-10"></div>
+                    
+                    <div class="md:w-1/2 md:pr-12 md:text-right pl-8 md:pl-0">
+                        <h3 class="text-xl font-bold text-gray-900">Operations Supervisor</h3>
+                        <p class="text-gray-600 font-medium mb-1">Gorillas Technology | London</p>
+                        <p class="text-gray-400 text-xs uppercase tracking-widest">Nov 2021 - Feb 2023</p>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12 pl-8 mt-4 md:mt-0">
+                        <p class="text-gray-600 leading-relaxed text-sm">Oversaw Dark Store operations (Chelsea/South Ken). Improved KPIs by 7.86%. Managed delivery promise time and service levels.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / CTA -->
+    <section id="contact" class="bg-[#002D5B] text-white py-24 relative overflow-hidden">
+        <!-- Decoration -->
+        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#E30613] via-[#E30613] to-[#002D5B]"></div>
+        <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-[#E30613] opacity-10 rounded-full blur-3xl"></div>
+
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <h2 class="text-4xl md:text-6xl font-bold mb-6 brand-font uppercase">Let's Build Together</h2>
+            <p class="text-xl text-blue-200 mb-12 max-w-2xl mx-auto">I am ready to bring my operational expertise to SIG UK. Available for immediate interview in Watford or Greater London.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left max-w-3xl mx-auto">
+                <a href="mailto:moizrizwan94@hotmail.com" class="bg-white/5 hover:bg-white/10 p-6 rounded-sm border border-white/10 transition-all group">
+                    <i data-lucide="mail" class="w-6 h-6 text-[#E30613] mb-4"></i>
+                    <p class="text-xs text-gray-400 uppercase tracking-wider mb-1">Email</p>
+                    <p class="font-bold text-sm truncate group-hover:text-[#E30613] transition-colors">moizrizwan94@hotmail.com</p>
+                </a>
+                
+                <div class="bg-white/5 p-6 rounded-sm border border-white/10">
+                    <i data-lucide="phone" class="w-6 h-6 text-[#E30613] mb-4"></i>
+                    <p class="text-xs text-gray-400 uppercase tracking-wider mb-1">Phone</p>
+                    <p class="font-bold text-sm">+44 7853 204148</p>
+                </div>
+
+                <div class="bg-white/5 p-6 rounded-sm border border-white/10">
+                    <i data-lucide="map-pin" class="w-6 h-6 text-[#E30613] mb-4"></i>
+                    <p class="text-xs text-gray-400 uppercase tracking-wider mb-1">Location</p>
+                    <p class="font-bold text-sm">Watford, UK</p>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center">
+                <button class="bg-[#E30613] text-white px-10 py-4 font-bold uppercase tracking-widest text-sm rounded-sm hover:bg-[#c40510] transition-colors shadow-lg hover:shadow-red-900/50">
+                    Download Full Resume (PDF)
+                </button>
+            </div>
+
+            <div class="mt-20 pt-8 border-t border-white/10 text-xs text-blue-400 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p>&copy; 2026 Abdul Moiz Janjua. Crafted for SIG UK Application.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
+                    <a href="#" class="hover:text-white transition-colors">Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Register GSAP Plugins
+        gsap.registerPlugin(ScrollTrigger);
+
+        // --- Loader Sequence ---
+        window.addEventListener('load', () => {
+            const tl = gsap.timeline();
+
+            // Animate Progress Bar
+            tl.to("#progressBar", {
+                width: "100%",
+                duration: 1.5,
+                ease: "power2.inOut"
+            })
+            // Slide up loader
+            .to("#loader", {
+                yPercent: -100,
+                duration: 0.8,
+                ease: "power4.inOut",
+                delay: 0.2
+            })
+            // Slide down navbar
+            .to("#navbar", {
+                y: "0%",
+                duration: 0.5,
+                ease: "power2.out"
+            }, "-=0.4")
+            // Trigger Hero Animations
+            .add(() => initHeroAnimations());
+        });
+
+        function initHeroAnimations() {
+            // Staggered text entrance
+            gsap.from(".hero-content > *", {
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.15,
+                ease: "power3.out",
+                clearProps: "all"
+            });
+
+            // Card entrance from right
+            gsap.from(".hero-visual", {
+                x: 100,
+                opacity: 0,
+                duration: 1.2,
+                ease: "power3.out",
+                delay: 0.3,
+                clearProps: "all"
+            });
+            
+            // Animate Skill Bars in Hero Card
+            gsap.utils.toArray(".skill-fill").forEach(bar => {
+                let width = bar.getAttribute("data-width");
+                gsap.to(bar, {
+                    width: width,
+                    duration: 1.5,
+                    ease: "power2.out",
+                    delay: 1
+                });
+            });
+        }
+
+        // --- Scroll Animations ---
+        
+        // Number Counters
+        gsap.utils.toArray(".counter").forEach(counter => {
+            const target = parseInt(counter.getAttribute("data-target"));
+            const rawText = counter.getAttribute("data-target");
+            const isPercent = rawText.includes("13") || rawText.includes("19"); // naive check based on data
+            const suffix = isPercent ? "%" : (target > 100 ? "+" : "");
+
+            ScrollTrigger.create({
+                trigger: counter,
+                start: "top 85%",
+                once: true,
+                onEnter: () => {
+                    gsap.to(counter, {
+                        innerHTML: target,
+                        duration: 2,
+                        snap: { innerHTML: 1 },
+                        onUpdate: function() {
+                            this.targets()[0].innerHTML = Math.ceil(this.targets()[0].innerHTML) + suffix;
+                        }
+                    });
+                }
+            });
+        });
+
+        // Timeline Items Fade In Up
+        gsap.utils.toArray(".timeline-item").forEach((item) => {
+            gsap.to(item, {
+                scrollTrigger: {
+                    trigger: item,
+                    start: "top 85%",
+                },
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                ease: "power2.out"
+            });
+        });
+
+        // Impact Rows Slide In
+        gsap.utils.toArray(".impact-row").forEach((row, i) => {
+            gsap.from(row, {
+                scrollTrigger: {
+                    trigger: row,
+                    start: "top 90%",
+                },
+                x: i % 2 === 0 ? -50 : 50,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power2.out"
+            });
+        });
+
+        // Navbar Styles on Scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+                nav.classList.remove('h-20');
+                nav.classList.add('h-16');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.remove('h-16');
+                nav.classList.add('h-20');
+            }
+        });
+
+    </script>
+</body>
+</html>
