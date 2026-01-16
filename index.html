@@ -16,9 +16,9 @@
     
     <style>
         :root {
-            /* SIG Corporate Identity Colors - Updated to Blue Theme */
-            --sig-blue: #002D5B; 
-            --sig-light-blue: #005EB8; /* Brighter Blue for accents */
+            /* SIG Corporate Identity Colors - Updated to Light Blue Theme */
+            --sig-blue: #7bb5e0; 
+            --sig-dark-overlay: #0f172a;
             --sig-black: #1A1A1A;
             --sig-grey: #F3F4F6;
         }
@@ -76,7 +76,7 @@
             background: var(--sig-blue);
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: var(--sig-light-blue);
+            background: #5a9bc8;
         }
 
         /* Loader Animation */
@@ -86,7 +86,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: var(--sig-blue);
+            background: var(--sig-dark-overlay);
             z-index: 9999;
             display: flex;
             justify-content: center;
@@ -105,7 +105,7 @@
         .progress-bar {
             width: 0%;
             height: 100%;
-            background: white;
+            background: var(--sig-blue);
             position: absolute;
             left: 0;
             top: 0;
@@ -146,17 +146,17 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <div class="w-10 h-10 bg-[#002D5B] text-white flex items-center justify-center font-bold brand-font text-xl rounded-sm shadow-lg">SIG</div>
+                    <div class="w-10 h-10 bg-[#7bb5e0] text-white flex items-center justify-center font-bold brand-font text-xl rounded-sm shadow-lg text-shadow">SIG</div>
                     <div class="hidden sm:block">
                         <span class="block text-xs text-gray-400 font-mono leading-none">CANDIDATE:</span>
-                        <span class="text-lg font-bold text-[#002D5B] tracking-tight leading-none">A. MOIZ JANJUA</span>
+                        <span class="text-lg font-bold text-[#7bb5e0] tracking-tight leading-none">A. MOIZ JANJUA</span>
                     </div>
                 </div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="#expertise" class="text-gray-600 hover:text-[#002D5B] text-sm font-bold uppercase tracking-wide transition-colors py-2">Expertise</a>
-                    <a href="#impact" class="text-gray-600 hover:text-[#002D5B] text-sm font-bold uppercase tracking-wide transition-colors py-2">Impact</a>
-                    <a href="#timeline" class="text-gray-600 hover:text-[#002D5B] text-sm font-bold uppercase tracking-wide transition-colors py-2">Journey</a>
-                    <a href="#contact" class="px-6 py-2 bg-[#002D5B] text-white font-bold text-sm uppercase tracking-wide rounded-sm hover:bg-[#001f3f] transition-all transform hover:scale-105 shadow-md">Hire Me</a>
+                    <a href="#expertise" class="text-gray-600 hover:text-[#7bb5e0] text-sm font-bold uppercase tracking-wide transition-colors py-2">Expertise</a>
+                    <a href="#impact" class="text-gray-600 hover:text-[#7bb5e0] text-sm font-bold uppercase tracking-wide transition-colors py-2">Impact</a>
+                    <a href="#timeline" class="text-gray-600 hover:text-[#7bb5e0] text-sm font-bold uppercase tracking-wide transition-colors py-2">Journey</a>
+                    <a href="#contact" class="px-6 py-2 bg-[#7bb5e0] text-white font-bold text-sm uppercase tracking-wide rounded-sm hover:bg-[#5a9bc8] transition-all transform hover:scale-105 shadow-md">Hire Me</a>
                 </div>
                 <!-- Mobile Menu Icon -->
                 <div class="md:hidden text-gray-800">
@@ -179,25 +179,25 @@
                 <!-- Text Content -->
                 <div class="space-y-8 hero-content z-10">
                     <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 border border-blue-100 rounded-sm">
-                        <span class="w-2 h-2 rounded-full bg-[#002D5B] animate-pulse"></span>
-                        <span class="text-[#002D5B] text-xs font-bold tracking-widest uppercase">Tailored for Brand Ambassador position at SIG</span>
+                        <span class="w-2 h-2 rounded-full bg-[#7bb5e0] animate-pulse"></span>
+                        <span class="text-[#7bb5e0] text-xs font-bold tracking-widest uppercase">Tailored for Brand Ambassador position at SIG</span>
                     </div>
                     
                     <h1 class="text-6xl md:text-8xl font-bold text-gray-900 leading-[0.9] hero-text-shadow">
                         BUILT FOR <br>
-                        <span class="text-[#002D5B]">GROWTH</span>
+                        <span class="text-[#7bb5e0]">GROWTH</span>
                     </h1>
                     
-                    <p class="text-xl text-gray-600 max-w-lg leading-relaxed border-l-4 border-[#002D5B] pl-6">
+                    <p class="text-xl text-gray-600 max-w-lg leading-relaxed border-l-4 border-[#7bb5e0] pl-6">
                         Data-driven Operations Manager combining <strong>Amazon logistics precision</strong> with <strong>Fintech analytical rigor</strong>. Ready to optimize SIG's supply chain and drive branch performance.
                     </p>
                     
                     <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                        <button onclick="document.getElementById('impact').scrollIntoView({behavior: 'smooth'})" class="group px-8 py-4 bg-[#002D5B] text-white font-bold text-sm uppercase tracking-wide rounded-sm hover:bg-[#001f3f] transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-3">
+                        <button onclick="document.getElementById('impact').scrollIntoView({behavior: 'smooth'})" class="group px-8 py-4 bg-[#7bb5e0] text-white font-bold text-sm uppercase tracking-wide rounded-sm hover:bg-[#5a9bc8] transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-3">
                             View Performance Metrics
                             <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
                         </button>
-                        <a href="Abdul_Moiz_Janjua___Amazon.pdf" download class="px-8 py-4 border-2 border-gray-200 text-gray-700 font-bold text-sm uppercase tracking-wide rounded-sm hover:border-[#002D5B] hover:text-[#002D5B] transition-all bg-white hover:bg-blue-50 flex items-center justify-center">
+                        <a href="Abdul_Moiz_Janjua___Amazon.pdf" download class="px-8 py-4 border-2 border-gray-200 text-gray-700 font-bold text-sm uppercase tracking-wide rounded-sm hover:border-[#7bb5e0] hover:text-[#7bb5e0] transition-all bg-white hover:bg-blue-50 flex items-center justify-center">
                             Download CV
                         </a>
                     </div>
@@ -205,15 +205,15 @@
                     <!-- Key Stats -->
                     <div class="grid grid-cols-3 gap-8 pt-10 border-t border-gray-200">
                         <div>
-                            <p class="text-4xl font-bold text-[#002D5B] brand-font counter" data-target="13">0%</p>
+                            <p class="text-4xl font-bold text-[#7bb5e0] brand-font counter" data-target="13">0%</p>
                             <p class="text-xs text-gray-500 font-bold uppercase tracking-wider mt-1">Productivity<br>Boost</p>
                         </div>
                         <div>
-                            <p class="text-4xl font-bold text-[#002D5B] brand-font counter" data-target="400">0</p>
+                            <p class="text-4xl font-bold text-[#7bb5e0] brand-font counter" data-target="400">0</p>
                             <p class="text-xs text-gray-500 font-bold uppercase tracking-wider mt-1">Hours Saved<br>Annually</p>
                         </div>
                         <div>
-                            <p class="text-4xl font-bold text-[#002D5B] brand-font counter" data-target="105">0</p>
+                            <p class="text-4xl font-bold text-[#7bb5e0] brand-font counter" data-target="105">0</p>
                             <p class="text-xs text-gray-500 font-bold uppercase tracking-wider mt-1">Team Size<br>Managed</p>
                         </div>
                     </div>
@@ -224,15 +224,15 @@
                     <!-- 3D Card Effect Container -->
                     <div class="relative w-full max-w-md aspect-[4/5] floating-shape">
                         <!-- Decorative Backing -->
-                        <div class="absolute -inset-4 bg-gradient-to-tr from-[#002D5B] to-[#005EB8] opacity-10 rounded-sm transform rotate-3"></div>
+                        <div class="absolute -inset-4 bg-gradient-to-tr from-[#7bb5e0] to-[#5a9bc8] opacity-10 rounded-sm transform rotate-3"></div>
                         
                         <!-- Main Card -->
                         <div class="absolute inset-0 bg-white shadow-2xl rounded-sm border border-gray-200 overflow-hidden flex flex-col">
                             <!-- Card Header -->
-                            <div class="bg-[#002D5B] p-6 text-white flex justify-between items-center">
+                            <div class="bg-[#7bb5e0] p-6 text-white flex justify-between items-center">
                                 <div>
                                     <h3 class="text-xl font-bold">Operational Audit</h3>
-                                    <p class="text-xs text-blue-200 uppercase tracking-wider">Candidate Capability Matrix</p>
+                                    <p class="text-xs text-white/90 uppercase tracking-wider">Candidate Capability Matrix</p>
                                 </div>
                                 <i data-lucide="clipboard-check" class="w-8 h-8 text-white"></i>
                             </div>
@@ -244,25 +244,25 @@
                                     <div class="skill-group">
                                         <div class="flex justify-between text-xs font-bold uppercase mb-2 text-gray-600">
                                             <span>Supply Chain Logistics</span>
-                                            <span class="text-[#002D5B]">95%</span>
+                                            <span class="text-[#7bb5e0]">95%</span>
                                         </div>
                                         <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
-                                            <div class="h-full bg-[#002D5B] w-0 skill-fill" data-width="95%"></div>
+                                            <div class="h-full bg-[#7bb5e0] w-0 skill-fill" data-width="95%"></div>
                                         </div>
                                     </div>
                                     <div class="skill-group">
                                         <div class="flex justify-between text-xs font-bold uppercase mb-2 text-gray-600">
                                             <span>Data Analysis (SQL/Excel)</span>
-                                            <span class="text-[#002D5B]">90%</span>
+                                            <span class="text-[#7bb5e0]">90%</span>
                                         </div>
                                         <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
-                                            <div class="h-full bg-[#002D5B] w-0 skill-fill" data-width="90%"></div>
+                                            <div class="h-full bg-[#7bb5e0] w-0 skill-fill" data-width="90%"></div>
                                         </div>
                                     </div>
                                     <div class="skill-group">
                                         <div class="flex justify-between text-xs font-bold uppercase mb-2 text-gray-600">
                                             <span>Lean Six Sigma</span>
-                                            <span class="text-[#002D5B]">Certified</span>
+                                            <span class="text-[#7bb5e0]">Certified</span>
                                         </div>
                                         <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
                                             <div class="h-full bg-[#22c55e] w-0 skill-fill" data-width="100%"></div>
@@ -271,10 +271,10 @@
                                     <div class="skill-group">
                                         <div class="flex justify-between text-xs font-bold uppercase mb-2 text-gray-600">
                                             <span>Team Leadership</span>
-                                            <span class="text-[#002D5B]">98%</span>
+                                            <span class="text-[#7bb5e0]">98%</span>
                                         </div>
                                         <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
-                                            <div class="h-full bg-[#002D5B] w-0 skill-fill" data-width="98%"></div>
+                                            <div class="h-full bg-[#7bb5e0] w-0 skill-fill" data-width="98%"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -282,9 +282,9 @@
 
                             <!-- Card Footer -->
                             <div class="bg-gray-50 p-4 border-t border-gray-100 flex items-center gap-4">
-                                <div class="w-12 h-12 rounded-full bg-white border-2 border-[#002D5B] p-0.5 shadow-sm overflow-hidden">
+                                <div class="w-12 h-12 rounded-full bg-white border-2 border-[#7bb5e0] p-0.5 shadow-sm overflow-hidden">
                                     <!-- Placeholder for Headshot if available, utilizing initials -->
-                                    <div class="w-full h-full bg-gray-200 flex items-center justify-center text-[#002D5B] font-bold">AJ</div>
+                                    <div class="w-full h-full bg-gray-200 flex items-center justify-center text-[#7bb5e0] font-bold">AJ</div>
                                 </div>
                                 <div>
                                     <p class="text-sm font-bold text-gray-900">Abdul Moiz Janjua</p>
@@ -305,9 +305,9 @@
     <section id="expertise" class="py-24 bg-white relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 max-w-3xl mx-auto">
-                <span class="text-[#002D5B] font-bold tracking-[0.2em] uppercase text-xs">Strategic Alignment</span>
+                <span class="text-[#7bb5e0] font-bold tracking-[0.2em] uppercase text-xs">Strategic Alignment</span>
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-6">Why I Fit The SIG Mold</h2>
-                <div class="w-24 h-1 bg-[#002D5B] mx-auto"></div>
+                <div class="w-24 h-1 bg-[#7bb5e0] mx-auto"></div>
                 <p class="text-gray-600 mt-6 text-lg">SIG leads the market through efficiency and reliability. My career has been built on the same pillars: <strong>optimizing workflows</strong> and <strong>delivering on promises</strong>.</p>
             </div>
 
@@ -315,14 +315,14 @@
                 <!-- Alignment Card 1 -->
                 <div class="bg-white p-10 rounded-sm border border-gray-100 card-hover group shadow-sm hover:shadow-xl relative overflow-hidden">
                     <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
-                        <i data-lucide="bar-chart-2" class="w-32 h-32 text-[#002D5B]"></i>
+                        <i data-lucide="bar-chart-2" class="w-32 h-32 text-[#7bb5e0]"></i>
                     </div>
-                    <div class="w-16 h-16 bg-blue-50 rounded-sm flex items-center justify-center text-[#002D5B] mb-8 group-hover:bg-[#002D5B] group-hover:text-white transition-colors">
+                    <div class="w-16 h-16 bg-blue-50 rounded-sm flex items-center justify-center text-[#7bb5e0] mb-8 group-hover:bg-[#7bb5e0] group-hover:text-white transition-colors">
                         <i data-lucide="database" class="w-8 h-8"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">Data Mastery</h3>
                     <p class="text-gray-600 mb-6 leading-relaxed">At <strong>Traction Fintech</strong> and <strong>Amazon</strong>, I leveraged SQL and BI tools to turn raw data into actionable growth strategies, saving hundreds of hours.</p>
-                    <a href="#" class="text-[#002D5B] font-bold text-sm uppercase tracking-wide flex items-center gap-2 group-hover:gap-3 transition-all">
+                    <a href="#" class="text-[#7bb5e0] font-bold text-sm uppercase tracking-wide flex items-center gap-2 group-hover:gap-3 transition-all">
                         Technical Skills <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
                 </div>
@@ -330,14 +330,14 @@
                 <!-- Alignment Card 2 -->
                 <div class="bg-white p-10 rounded-sm border border-gray-100 card-hover group shadow-sm hover:shadow-xl relative overflow-hidden">
                     <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
-                        <i data-lucide="package" class="w-32 h-32 text-[#002D5B]"></i>
+                        <i data-lucide="package" class="w-32 h-32 text-[#7bb5e0]"></i>
                     </div>
-                    <div class="w-16 h-16 bg-blue-50 rounded-sm flex items-center justify-center text-[#002D5B] mb-8 group-hover:bg-[#002D5B] group-hover:text-white transition-colors">
+                    <div class="w-16 h-16 bg-blue-50 rounded-sm flex items-center justify-center text-[#7bb5e0] mb-8 group-hover:bg-[#7bb5e0] group-hover:text-white transition-colors">
                         <i data-lucide="truck" class="w-8 h-8"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">Logistics Ops</h3>
                     <p class="text-gray-600 mb-6 leading-relaxed">Managing <strong>Gorillas Dark Stores</strong> and <strong>Amazon FCs</strong> taught me the art of the "Last Mile" and internal flow. I improve dispatch times and reduce error rates.</p>
-                    <a href="#" class="text-[#002D5B] font-bold text-sm uppercase tracking-wide flex items-center gap-2 group-hover:gap-3 transition-all">
+                    <a href="#" class="text-[#7bb5e0] font-bold text-sm uppercase tracking-wide flex items-center gap-2 group-hover:gap-3 transition-all">
                         Ops Experience <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
                 </div>
@@ -345,14 +345,14 @@
                 <!-- Alignment Card 3 -->
                 <div class="bg-white p-10 rounded-sm border border-gray-100 card-hover group shadow-sm hover:shadow-xl relative overflow-hidden">
                     <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
-                        <i data-lucide="users" class="w-32 h-32 text-[#002D5B]"></i>
+                        <i data-lucide="users" class="w-32 h-32 text-[#7bb5e0]"></i>
                     </div>
-                    <div class="w-16 h-16 bg-blue-50 rounded-sm flex items-center justify-center text-[#002D5B] mb-8 group-hover:bg-[#002D5B] group-hover:text-white transition-colors">
+                    <div class="w-16 h-16 bg-blue-50 rounded-sm flex items-center justify-center text-[#7bb5e0] mb-8 group-hover:bg-[#7bb5e0] group-hover:text-white transition-colors">
                         <i data-lucide="users" class="w-8 h-8"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">Leadership</h3>
                     <p class="text-gray-600 mb-6 leading-relaxed">From founding <strong>SplitTrip</strong> to leading 35 specialists at Amazon. I employ Situational Leadership to develop teams that are autonomous and high-performing.</p>
-                    <a href="#" class="text-[#002D5B] font-bold text-sm uppercase tracking-wide flex items-center gap-2 group-hover:gap-3 transition-all">
+                    <a href="#" class="text-[#7bb5e0] font-bold text-sm uppercase tracking-wide flex items-center gap-2 group-hover:gap-3 transition-all">
                         Management Style <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
                 </div>
@@ -363,7 +363,7 @@
     <!-- Deep Dive / Impact Section (Dark Mode) -->
     <section id="impact" class="py-24 bg-[#111827] text-white clip-diagonal relative overflow-hidden">
         <!-- Grid Background -->
-        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#002D5B 1px, transparent 1px); background-size: 30px 30px;"></div>
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#7bb5e0 1px, transparent 1px); background-size: 30px 30px;"></div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="flex flex-col md:flex-row justify-between items-end mb-16">
@@ -372,7 +372,7 @@
                     <p class="text-gray-400 max-w-xl">My value isn't just theoretical. Here is the data from my recent roles.</p>
                 </div>
                 <div class="hidden md:flex gap-2">
-                    <span class="h-1 w-12 bg-[#002D5B]"></span>
+                    <span class="h-1 w-12 bg-[#7bb5e0]"></span>
                     <span class="h-1 w-4 bg-gray-600"></span>
                     <span class="h-1 w-4 bg-gray-600"></span>
                 </div>
@@ -381,10 +381,10 @@
             <div class="space-y-4">
                 <!-- Impact Row 1 -->
                 <div class="group relative bg-white/5 border border-white/10 p-8 hover:bg-white/10 transition-all cursor-default overflow-hidden rounded-sm impact-row">
-                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-[#002D5B] h-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-[#7bb5e0] h-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
                     <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
                         <div class="md:col-span-3">
-                            <span class="text-[10px] font-bold text-blue-400 tracking-widest uppercase mb-1 block">Traction Fintech</span>
+                            <span class="text-[10px] font-bold text-[#7bb5e0] tracking-widest uppercase mb-1 block">Traction Fintech</span>
                             <h3 class="text-2xl font-bold text-white">Process Efficiency</h3>
                         </div>
                         <div class="md:col-span-6">
@@ -395,17 +395,17 @@
                                 <span class="text-4xl font-bold text-white block font-mono">+400</span>
                                 <span class="text-[10px] text-gray-400 uppercase tracking-wider">Hours Saved/Year</span>
                             </div>
-                            <i data-lucide="clock" class="w-8 h-8 text-gray-600 group-hover:text-blue-400 transition-colors"></i>
+                            <i data-lucide="clock" class="w-8 h-8 text-gray-600 group-hover:text-[#7bb5e0] transition-colors"></i>
                         </div>
                     </div>
                 </div>
 
                 <!-- Impact Row 2 -->
                 <div class="group relative bg-white/5 border border-white/10 p-8 hover:bg-white/10 transition-all cursor-default overflow-hidden rounded-sm impact-row">
-                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-[#002D5B] h-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-[#7bb5e0] h-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
                     <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
                         <div class="md:col-span-3">
-                            <span class="text-[10px] font-bold text-blue-400 tracking-widest uppercase mb-1 block">Amazon UK</span>
+                            <span class="text-[10px] font-bold text-[#7bb5e0] tracking-widest uppercase mb-1 block">Amazon UK</span>
                             <h3 class="text-2xl font-bold text-white">Productivity</h3>
                         </div>
                         <div class="md:col-span-6">
@@ -416,17 +416,17 @@
                                 <span class="text-4xl font-bold text-white block font-mono">13%</span>
                                 <span class="text-[10px] text-gray-400 uppercase tracking-wider">Productivity Lift</span>
                             </div>
-                            <i data-lucide="trending-up" class="w-8 h-8 text-gray-600 group-hover:text-blue-400 transition-colors"></i>
+                            <i data-lucide="trending-up" class="w-8 h-8 text-gray-600 group-hover:text-[#7bb5e0] transition-colors"></i>
                         </div>
                     </div>
                 </div>
 
                 <!-- Impact Row 3 -->
                 <div class="group relative bg-white/5 border border-white/10 p-8 hover:bg-white/10 transition-all cursor-default overflow-hidden rounded-sm impact-row">
-                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-[#002D5B] h-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-[#7bb5e0] h-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
                     <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
                         <div class="md:col-span-3">
-                            <span class="text-[10px] font-bold text-blue-400 tracking-widest uppercase mb-1 block">Tresmark</span>
+                            <span class="text-[10px] font-bold text-[#7bb5e0] tracking-widest uppercase mb-1 block">Tresmark</span>
                             <h3 class="text-2xl font-bold text-white">UX Optimization</h3>
                         </div>
                         <div class="md:col-span-6">
@@ -437,7 +437,7 @@
                                 <span class="text-4xl font-bold text-white block font-mono">-19%</span>
                                 <span class="text-[10px] text-gray-400 uppercase tracking-wider">Bounce Rate</span>
                             </div>
-                            <i data-lucide="mouse-pointer-2" class="w-8 h-8 text-gray-600 group-hover:text-blue-400 transition-colors"></i>
+                            <i data-lucide="mouse-pointer-2" class="w-8 h-8 text-gray-600 group-hover:text-[#7bb5e0] transition-colors"></i>
                         </div>
                     </div>
                 </div>
@@ -454,12 +454,12 @@
                 
                 <!-- Timeline Item 1: Traction Fintech -->
                 <div class="relative flex flex-col md:flex-row items-start timeline-item opacity-0 transform translate-y-8">
-                    <div class="absolute -left-5 md:left-1/2 md:-ml-5 w-10 h-10 rounded-full z-10 timeline-icon-wrapper flex items-center justify-center text-[#002D5B]">
+                    <div class="absolute -left-5 md:left-1/2 md:-ml-5 w-10 h-10 rounded-full z-10 timeline-icon-wrapper flex items-center justify-center text-[#7bb5e0]">
                         <i data-lucide="user-check" class="w-5 h-5"></i>
                     </div>
                     
                     <div class="md:w-1/2 md:pr-16 md:text-right pl-12 md:pl-0">
-                        <span class="inline-block px-2 py-1 bg-blue-100 text-[#002D5B] text-xs font-bold rounded mb-2">Most Recent</span>
+                        <span class="inline-block px-2 py-1 bg-blue-100 text-[#7bb5e0] text-xs font-bold rounded mb-2">Most Recent</span>
                         <h3 class="text-xl font-bold text-gray-900">Onboarding Officer</h3>
                         <p class="text-gray-600 font-medium mb-1">Traction Fintech | London</p>
                         <p class="text-gray-400 text-xs uppercase tracking-widest">Jun 2025 - Nov 2025</p>
@@ -471,7 +471,7 @@
 
                 <!-- Timeline Item 2: SplitTrip (Founder) -->
                 <div class="relative flex flex-col md:flex-row items-start timeline-item opacity-0 transform translate-y-8">
-                    <div class="absolute -left-5 md:left-1/2 md:-ml-5 w-10 h-10 rounded-full z-10 timeline-icon-wrapper flex items-center justify-center text-[#002D5B]">
+                    <div class="absolute -left-5 md:left-1/2 md:-ml-5 w-10 h-10 rounded-full z-10 timeline-icon-wrapper flex items-center justify-center text-[#7bb5e0]">
                         <i data-lucide="rocket" class="w-5 h-5"></i>
                     </div>
                     
@@ -488,7 +488,7 @@
 
                 <!-- Timeline Item 3: Amazon -->
                 <div class="relative flex flex-col md:flex-row items-start timeline-item opacity-0 transform translate-y-8">
-                    <div class="absolute -left-5 md:left-1/2 md:-ml-5 w-10 h-10 rounded-full z-10 timeline-icon-wrapper flex items-center justify-center text-[#002D5B]">
+                    <div class="absolute -left-5 md:left-1/2 md:-ml-5 w-10 h-10 rounded-full z-10 timeline-icon-wrapper flex items-center justify-center text-[#7bb5e0]">
                         <i data-lucide="package" class="w-5 h-5"></i>
                     </div>
                     
@@ -504,7 +504,7 @@
 
                 <!-- Timeline Item 4: Gorillas -->
                 <div class="relative flex flex-col md:flex-row items-start timeline-item opacity-0 transform translate-y-8">
-                    <div class="absolute -left-5 md:left-1/2 md:-ml-5 w-10 h-10 rounded-full z-10 timeline-icon-wrapper flex items-center justify-center text-[#002D5B]">
+                    <div class="absolute -left-5 md:left-1/2 md:-ml-5 w-10 h-10 rounded-full z-10 timeline-icon-wrapper flex items-center justify-center text-[#7bb5e0]">
                         <i data-lucide="zap" class="w-5 h-5"></i>
                     </div>
                     
@@ -521,7 +521,7 @@
 
                 <!-- Timeline Item 5: Tresmark -->
                 <div class="relative flex flex-col md:flex-row items-start timeline-item opacity-0 transform translate-y-8">
-                    <div class="absolute -left-5 md:left-1/2 md:-ml-5 w-10 h-10 rounded-full z-10 timeline-icon-wrapper flex items-center justify-center text-[#002D5B]">
+                    <div class="absolute -left-5 md:left-1/2 md:-ml-5 w-10 h-10 rounded-full z-10 timeline-icon-wrapper flex items-center justify-center text-[#7bb5e0]">
                         <i data-lucide="layout" class="w-5 h-5"></i>
                     </div>
                     
@@ -542,8 +542,8 @@
     <!-- Footer / CTA -->
     <section id="contact" class="bg-[#111827] text-white py-24 relative overflow-hidden">
         <!-- Decoration -->
-        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#002D5B] via-[#005EB8] to-[#002D5B]"></div>
-        <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-[#002D5B] opacity-10 rounded-full blur-3xl"></div>
+        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#7bb5e0] via-[#5a9bc8] to-[#7bb5e0]"></div>
+        <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-[#7bb5e0] opacity-10 rounded-full blur-3xl"></div>
 
         <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
             <h2 class="text-4xl md:text-6xl font-bold mb-6 brand-font uppercase">Let's Build Together</h2>
@@ -570,7 +570,7 @@
             </div>
 
             <div class="mt-16 text-center">
-                <a href="Abdul_Moiz_Janjua___Amazon.pdf" download class="inline-block bg-[#002D5B] text-white px-10 py-4 font-bold uppercase tracking-widest text-sm rounded-sm hover:bg-[#001f3f] transition-colors shadow-lg hover:shadow-blue-900/50">
+                <a href="Abdul_Moiz_Janjua___Amazon.pdf" download class="inline-block bg-[#7bb5e0] text-white px-10 py-4 font-bold uppercase tracking-widest text-sm rounded-sm hover:bg-[#5a9bc8] transition-colors shadow-lg hover:shadow-blue-900/50">
                     Download Full Resume (PDF)
                 </a>
             </div>
