@@ -16,9 +16,9 @@
     
     <style>
         :root {
-            /* SIG Corporate Identity Colors */
-            --sig-red: #E30613; 
-            --sig-dark-blue: #002D5B;
+            /* SIG Corporate Identity Colors - Updated to Blue Theme */
+            --sig-blue: #002D5B; 
+            --sig-light-blue: #005EB8; /* Brighter Blue for accents */
             --sig-black: #1A1A1A;
             --sig-grey: #F3F4F6;
         }
@@ -62,7 +62,7 @@
         .card-hover:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            border-color: var(--sig-red);
+            border-color: var(--sig-blue);
         }
 
         /* Custom Scrollbar */
@@ -73,10 +73,10 @@
             background: #f1f1f1;
         }
         ::-webkit-scrollbar-thumb {
-            background: var(--sig-red);
+            background: var(--sig-blue);
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #b9050f;
+            background: var(--sig-light-blue);
         }
 
         /* Loader Animation */
@@ -86,7 +86,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: var(--sig-dark-blue);
+            background: var(--sig-blue);
             z-index: 9999;
             display: flex;
             justify-content: center;
@@ -105,7 +105,7 @@
         .progress-bar {
             width: 0%;
             height: 100%;
-            background: var(--sig-red);
+            background: white;
             position: absolute;
             left: 0;
             top: 0;
@@ -119,6 +119,12 @@
             0% { transform: translateY(0px); }
             50% { transform: translateY(-20px); }
             100% { transform: translateY(0px); }
+        }
+        
+        /* Timeline Icon styling */
+        .timeline-icon-wrapper {
+             background: white;
+             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
     </style>
 </head>
@@ -140,17 +146,17 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <div class="w-10 h-10 bg-[#E30613] text-white flex items-center justify-center font-bold brand-font text-xl rounded-sm shadow-lg">SIG</div>
+                    <div class="w-10 h-10 bg-[#002D5B] text-white flex items-center justify-center font-bold brand-font text-xl rounded-sm shadow-lg">SIG</div>
                     <div class="hidden sm:block">
                         <span class="block text-xs text-gray-400 font-mono leading-none">CANDIDATE:</span>
                         <span class="text-lg font-bold text-[#002D5B] tracking-tight leading-none">A. MOIZ JANJUA</span>
                     </div>
                 </div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="#expertise" class="text-gray-600 hover:text-[#E30613] text-sm font-bold uppercase tracking-wide transition-colors py-2">Expertise</a>
-                    <a href="#impact" class="text-gray-600 hover:text-[#E30613] text-sm font-bold uppercase tracking-wide transition-colors py-2">Impact</a>
-                    <a href="#timeline" class="text-gray-600 hover:text-[#E30613] text-sm font-bold uppercase tracking-wide transition-colors py-2">Journey</a>
-                    <a href="#contact" class="px-6 py-2 bg-[#E30613] text-white font-bold text-sm uppercase tracking-wide rounded-sm hover:bg-[#b9050f] transition-all transform hover:scale-105 shadow-md">Hire Me</a>
+                    <a href="#expertise" class="text-gray-600 hover:text-[#002D5B] text-sm font-bold uppercase tracking-wide transition-colors py-2">Expertise</a>
+                    <a href="#impact" class="text-gray-600 hover:text-[#002D5B] text-sm font-bold uppercase tracking-wide transition-colors py-2">Impact</a>
+                    <a href="#timeline" class="text-gray-600 hover:text-[#002D5B] text-sm font-bold uppercase tracking-wide transition-colors py-2">Journey</a>
+                    <a href="#contact" class="px-6 py-2 bg-[#002D5B] text-white font-bold text-sm uppercase tracking-wide rounded-sm hover:bg-[#001f3f] transition-all transform hover:scale-105 shadow-md">Hire Me</a>
                 </div>
                 <!-- Mobile Menu Icon -->
                 <div class="md:hidden text-gray-800">
@@ -164,8 +170,8 @@
     <section class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-grid-pattern">
         <!-- Abstract Background Shapes -->
         <div class="absolute top-0 right-0 w-2/5 h-full bg-gray-50 -z-10 clip-diagonal-reverse hidden lg:block border-l border-gray-100"></div>
-        <div class="absolute top-20 right-20 w-72 h-72 bg-red-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
-        <div class="absolute top-20 right-80 w-72 h-72 bg-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+        <div class="absolute top-20 right-20 w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
+        <div class="absolute top-20 right-80 w-72 h-72 bg-indigo-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -174,15 +180,15 @@
                 <div class="space-y-8 hero-content z-10">
                     <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 border border-blue-100 rounded-sm">
                         <span class="w-2 h-2 rounded-full bg-[#002D5B] animate-pulse"></span>
-                        <span class="text-[#002D5B] text-xs font-bold tracking-widest uppercase">Application for Record #137</span>
+                        <span class="text-[#002D5B] text-xs font-bold tracking-widest uppercase">Tailored for Brand Ambassador position at SIG</span>
                     </div>
                     
                     <h1 class="text-6xl md:text-8xl font-bold text-gray-900 leading-[0.9] hero-text-shadow">
                         BUILT FOR <br>
-                        <span class="text-[#E30613]">GROWTH</span>
+                        <span class="text-[#002D5B]">GROWTH</span>
                     </h1>
                     
-                    <p class="text-xl text-gray-600 max-w-lg leading-relaxed border-l-4 border-[#E30613] pl-6">
+                    <p class="text-xl text-gray-600 max-w-lg leading-relaxed border-l-4 border-[#002D5B] pl-6">
                         Data-driven Operations Manager combining <strong>Amazon logistics precision</strong> with <strong>Fintech analytical rigor</strong>. Ready to optimize SIG's supply chain and drive branch performance.
                     </p>
                     
@@ -191,23 +197,23 @@
                             View Performance Metrics
                             <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
                         </button>
-                        <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" class="px-8 py-4 border-2 border-gray-200 text-gray-700 font-bold text-sm uppercase tracking-wide rounded-sm hover:border-[#E30613] hover:text-[#E30613] transition-all bg-white hover:bg-red-50">
+                        <a href="Abdul_Moiz_Janjua___Amazon.pdf" download class="px-8 py-4 border-2 border-gray-200 text-gray-700 font-bold text-sm uppercase tracking-wide rounded-sm hover:border-[#002D5B] hover:text-[#002D5B] transition-all bg-white hover:bg-blue-50 flex items-center justify-center">
                             Download CV
-                        </button>
+                        </a>
                     </div>
 
                     <!-- Key Stats -->
                     <div class="grid grid-cols-3 gap-8 pt-10 border-t border-gray-200">
                         <div>
-                            <p class="text-4xl font-bold text-[#E30613] brand-font counter" data-target="13">0%</p>
+                            <p class="text-4xl font-bold text-[#002D5B] brand-font counter" data-target="13">0%</p>
                             <p class="text-xs text-gray-500 font-bold uppercase tracking-wider mt-1">Productivity<br>Boost</p>
                         </div>
                         <div>
-                            <p class="text-4xl font-bold text-[#E30613] brand-font counter" data-target="400">0</p>
+                            <p class="text-4xl font-bold text-[#002D5B] brand-font counter" data-target="400">0</p>
                             <p class="text-xs text-gray-500 font-bold uppercase tracking-wider mt-1">Hours Saved<br>Annually</p>
                         </div>
                         <div>
-                            <p class="text-4xl font-bold text-[#E30613] brand-font counter" data-target="105">0</p>
+                            <p class="text-4xl font-bold text-[#002D5B] brand-font counter" data-target="105">0</p>
                             <p class="text-xs text-gray-500 font-bold uppercase tracking-wider mt-1">Team Size<br>Managed</p>
                         </div>
                     </div>
@@ -218,7 +224,7 @@
                     <!-- 3D Card Effect Container -->
                     <div class="relative w-full max-w-md aspect-[4/5] floating-shape">
                         <!-- Decorative Backing -->
-                        <div class="absolute -inset-4 bg-gradient-to-tr from-[#E30613] to-[#002D5B] opacity-10 rounded-sm transform rotate-3"></div>
+                        <div class="absolute -inset-4 bg-gradient-to-tr from-[#002D5B] to-[#005EB8] opacity-10 rounded-sm transform rotate-3"></div>
                         
                         <!-- Main Card -->
                         <div class="absolute inset-0 bg-white shadow-2xl rounded-sm border border-gray-200 overflow-hidden flex flex-col">
@@ -228,7 +234,7 @@
                                     <h3 class="text-xl font-bold">Operational Audit</h3>
                                     <p class="text-xs text-blue-200 uppercase tracking-wider">Candidate Capability Matrix</p>
                                 </div>
-                                <i data-lucide="clipboard-check" class="w-8 h-8 text-[#E30613]"></i>
+                                <i data-lucide="clipboard-check" class="w-8 h-8 text-white"></i>
                             </div>
 
                             <!-- Card Body -->
@@ -238,7 +244,7 @@
                                     <div class="skill-group">
                                         <div class="flex justify-between text-xs font-bold uppercase mb-2 text-gray-600">
                                             <span>Supply Chain Logistics</span>
-                                            <span class="text-[#E30613]">95%</span>
+                                            <span class="text-[#002D5B]">95%</span>
                                         </div>
                                         <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
                                             <div class="h-full bg-[#002D5B] w-0 skill-fill" data-width="95%"></div>
@@ -247,7 +253,7 @@
                                     <div class="skill-group">
                                         <div class="flex justify-between text-xs font-bold uppercase mb-2 text-gray-600">
                                             <span>Data Analysis (SQL/Excel)</span>
-                                            <span class="text-[#E30613]">90%</span>
+                                            <span class="text-[#002D5B]">90%</span>
                                         </div>
                                         <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
                                             <div class="h-full bg-[#002D5B] w-0 skill-fill" data-width="90%"></div>
@@ -256,7 +262,7 @@
                                     <div class="skill-group">
                                         <div class="flex justify-between text-xs font-bold uppercase mb-2 text-gray-600">
                                             <span>Lean Six Sigma</span>
-                                            <span class="text-[#E30613]">Certified</span>
+                                            <span class="text-[#002D5B]">Certified</span>
                                         </div>
                                         <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
                                             <div class="h-full bg-[#22c55e] w-0 skill-fill" data-width="100%"></div>
@@ -265,7 +271,7 @@
                                     <div class="skill-group">
                                         <div class="flex justify-between text-xs font-bold uppercase mb-2 text-gray-600">
                                             <span>Team Leadership</span>
-                                            <span class="text-[#E30613]">98%</span>
+                                            <span class="text-[#002D5B]">98%</span>
                                         </div>
                                         <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
                                             <div class="h-full bg-[#002D5B] w-0 skill-fill" data-width="98%"></div>
@@ -276,9 +282,9 @@
 
                             <!-- Card Footer -->
                             <div class="bg-gray-50 p-4 border-t border-gray-100 flex items-center gap-4">
-                                <div class="w-12 h-12 rounded-full bg-white border-2 border-[#E30613] p-0.5 shadow-sm overflow-hidden">
+                                <div class="w-12 h-12 rounded-full bg-white border-2 border-[#002D5B] p-0.5 shadow-sm overflow-hidden">
                                     <!-- Placeholder for Headshot if available, utilizing initials -->
-                                    <div class="w-full h-full bg-gray-200 flex items-center justify-center text-[#E30613] font-bold">AJ</div>
+                                    <div class="w-full h-full bg-gray-200 flex items-center justify-center text-[#002D5B] font-bold">AJ</div>
                                 </div>
                                 <div>
                                     <p class="text-sm font-bold text-gray-900">Abdul Moiz Janjua</p>
@@ -299,9 +305,9 @@
     <section id="expertise" class="py-24 bg-white relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 max-w-3xl mx-auto">
-                <span class="text-[#E30613] font-bold tracking-[0.2em] uppercase text-xs">Strategic Alignment</span>
+                <span class="text-[#002D5B] font-bold tracking-[0.2em] uppercase text-xs">Strategic Alignment</span>
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-6">Why I Fit The SIG Mold</h2>
-                <div class="w-24 h-1 bg-[#E30613] mx-auto"></div>
+                <div class="w-24 h-1 bg-[#002D5B] mx-auto"></div>
                 <p class="text-gray-600 mt-6 text-lg">SIG leads the market through efficiency and reliability. My career has been built on the same pillars: <strong>optimizing workflows</strong> and <strong>delivering on promises</strong>.</p>
             </div>
 
@@ -316,7 +322,7 @@
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">Data Mastery</h3>
                     <p class="text-gray-600 mb-6 leading-relaxed">At <strong>Traction Fintech</strong> and <strong>Amazon</strong>, I leveraged SQL and BI tools to turn raw data into actionable growth strategies, saving hundreds of hours.</p>
-                    <a href="#" class="text-[#E30613] font-bold text-sm uppercase tracking-wide flex items-center gap-2 group-hover:gap-3 transition-all">
+                    <a href="#" class="text-[#002D5B] font-bold text-sm uppercase tracking-wide flex items-center gap-2 group-hover:gap-3 transition-all">
                         Technical Skills <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
                 </div>
@@ -324,14 +330,14 @@
                 <!-- Alignment Card 2 -->
                 <div class="bg-white p-10 rounded-sm border border-gray-100 card-hover group shadow-sm hover:shadow-xl relative overflow-hidden">
                     <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
-                        <i data-lucide="package" class="w-32 h-32 text-[#E30613]"></i>
+                        <i data-lucide="package" class="w-32 h-32 text-[#002D5B]"></i>
                     </div>
-                    <div class="w-16 h-16 bg-red-50 rounded-sm flex items-center justify-center text-[#E30613] mb-8 group-hover:bg-[#E30613] group-hover:text-white transition-colors">
+                    <div class="w-16 h-16 bg-blue-50 rounded-sm flex items-center justify-center text-[#002D5B] mb-8 group-hover:bg-[#002D5B] group-hover:text-white transition-colors">
                         <i data-lucide="truck" class="w-8 h-8"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">Logistics Ops</h3>
                     <p class="text-gray-600 mb-6 leading-relaxed">Managing <strong>Gorillas Dark Stores</strong> and <strong>Amazon FCs</strong> taught me the art of the "Last Mile" and internal flow. I improve dispatch times and reduce error rates.</p>
-                    <a href="#" class="text-[#E30613] font-bold text-sm uppercase tracking-wide flex items-center gap-2 group-hover:gap-3 transition-all">
+                    <a href="#" class="text-[#002D5B] font-bold text-sm uppercase tracking-wide flex items-center gap-2 group-hover:gap-3 transition-all">
                         Ops Experience <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
                 </div>
@@ -346,7 +352,7 @@
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">Leadership</h3>
                     <p class="text-gray-600 mb-6 leading-relaxed">From founding <strong>SplitTrip</strong> to leading 35 specialists at Amazon. I employ Situational Leadership to develop teams that are autonomous and high-performing.</p>
-                    <a href="#" class="text-[#E30613] font-bold text-sm uppercase tracking-wide flex items-center gap-2 group-hover:gap-3 transition-all">
+                    <a href="#" class="text-[#002D5B] font-bold text-sm uppercase tracking-wide flex items-center gap-2 group-hover:gap-3 transition-all">
                         Management Style <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
                 </div>
@@ -355,9 +361,9 @@
     </section>
 
     <!-- Deep Dive / Impact Section (Dark Mode) -->
-    <section id="impact" class="py-24 bg-[#1A1A1A] text-white clip-diagonal relative overflow-hidden">
+    <section id="impact" class="py-24 bg-[#111827] text-white clip-diagonal relative overflow-hidden">
         <!-- Grid Background -->
-        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#E30613 1px, transparent 1px); background-size: 30px 30px;"></div>
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#002D5B 1px, transparent 1px); background-size: 30px 30px;"></div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="flex flex-col md:flex-row justify-between items-end mb-16">
@@ -366,7 +372,7 @@
                     <p class="text-gray-400 max-w-xl">My value isn't just theoretical. Here is the data from my recent roles.</p>
                 </div>
                 <div class="hidden md:flex gap-2">
-                    <span class="h-1 w-12 bg-[#E30613]"></span>
+                    <span class="h-1 w-12 bg-[#002D5B]"></span>
                     <span class="h-1 w-4 bg-gray-600"></span>
                     <span class="h-1 w-4 bg-gray-600"></span>
                 </div>
@@ -375,10 +381,10 @@
             <div class="space-y-4">
                 <!-- Impact Row 1 -->
                 <div class="group relative bg-white/5 border border-white/10 p-8 hover:bg-white/10 transition-all cursor-default overflow-hidden rounded-sm impact-row">
-                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-[#E30613] h-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-[#002D5B] h-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
                     <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
                         <div class="md:col-span-3">
-                            <span class="text-[10px] font-bold text-[#E30613] tracking-widest uppercase mb-1 block">Traction Fintech</span>
+                            <span class="text-[10px] font-bold text-blue-400 tracking-widest uppercase mb-1 block">Traction Fintech</span>
                             <h3 class="text-2xl font-bold text-white">Process Efficiency</h3>
                         </div>
                         <div class="md:col-span-6">
@@ -389,17 +395,17 @@
                                 <span class="text-4xl font-bold text-white block font-mono">+400</span>
                                 <span class="text-[10px] text-gray-400 uppercase tracking-wider">Hours Saved/Year</span>
                             </div>
-                            <i data-lucide="clock" class="w-8 h-8 text-gray-600 group-hover:text-[#E30613] transition-colors"></i>
+                            <i data-lucide="clock" class="w-8 h-8 text-gray-600 group-hover:text-blue-400 transition-colors"></i>
                         </div>
                     </div>
                 </div>
 
                 <!-- Impact Row 2 -->
                 <div class="group relative bg-white/5 border border-white/10 p-8 hover:bg-white/10 transition-all cursor-default overflow-hidden rounded-sm impact-row">
-                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-[#E30613] h-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-[#002D5B] h-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
                     <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
                         <div class="md:col-span-3">
-                            <span class="text-[10px] font-bold text-[#E30613] tracking-widest uppercase mb-1 block">Amazon UK</span>
+                            <span class="text-[10px] font-bold text-blue-400 tracking-widest uppercase mb-1 block">Amazon UK</span>
                             <h3 class="text-2xl font-bold text-white">Productivity</h3>
                         </div>
                         <div class="md:col-span-6">
@@ -410,17 +416,17 @@
                                 <span class="text-4xl font-bold text-white block font-mono">13%</span>
                                 <span class="text-[10px] text-gray-400 uppercase tracking-wider">Productivity Lift</span>
                             </div>
-                            <i data-lucide="trending-up" class="w-8 h-8 text-gray-600 group-hover:text-[#E30613] transition-colors"></i>
+                            <i data-lucide="trending-up" class="w-8 h-8 text-gray-600 group-hover:text-blue-400 transition-colors"></i>
                         </div>
                     </div>
                 </div>
 
                 <!-- Impact Row 3 -->
                 <div class="group relative bg-white/5 border border-white/10 p-8 hover:bg-white/10 transition-all cursor-default overflow-hidden rounded-sm impact-row">
-                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-[#E30613] h-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-[#002D5B] h-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
                     <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
                         <div class="md:col-span-3">
-                            <span class="text-[10px] font-bold text-[#E30613] tracking-widest uppercase mb-1 block">Tresmark</span>
+                            <span class="text-[10px] font-bold text-blue-400 tracking-widest uppercase mb-1 block">Tresmark</span>
                             <h3 class="text-2xl font-bold text-white">UX Optimization</h3>
                         </div>
                         <div class="md:col-span-6">
@@ -431,7 +437,7 @@
                                 <span class="text-4xl font-bold text-white block font-mono">-19%</span>
                                 <span class="text-[10px] text-gray-400 uppercase tracking-wider">Bounce Rate</span>
                             </div>
-                            <i data-lucide="mouse-pointer-2" class="w-8 h-8 text-gray-600 group-hover:text-[#E30613] transition-colors"></i>
+                            <i data-lucide="mouse-pointer-2" class="w-8 h-8 text-gray-600 group-hover:text-blue-400 transition-colors"></i>
                         </div>
                     </div>
                 </div>
@@ -446,58 +452,98 @@
             
             <div class="relative border-l-2 border-gray-200 ml-4 md:ml-0 space-y-16">
                 
-                <!-- Timeline Item 1 -->
+                <!-- Timeline Item 1: Traction Fintech -->
                 <div class="relative flex flex-col md:flex-row items-start timeline-item opacity-0 transform translate-y-8">
-                    <div class="absolute -left-2.5 md:left-1/2 md:-ml-2.5 w-5 h-5 bg-[#E30613] border-4 border-white shadow-md rounded-full z-10"></div>
+                    <div class="absolute -left-5 md:left-1/2 md:-ml-5 w-10 h-10 rounded-full z-10 timeline-icon-wrapper flex items-center justify-center text-[#002D5B]">
+                        <i data-lucide="user-check" class="w-5 h-5"></i>
+                    </div>
                     
-                    <div class="md:w-1/2 md:pr-12 md:text-right pl-8 md:pl-0">
-                        <span class="inline-block px-2 py-1 bg-red-100 text-[#E30613] text-xs font-bold rounded mb-2">Most Recent</span>
+                    <div class="md:w-1/2 md:pr-16 md:text-right pl-12 md:pl-0">
+                        <span class="inline-block px-2 py-1 bg-blue-100 text-[#002D5B] text-xs font-bold rounded mb-2">Most Recent</span>
                         <h3 class="text-xl font-bold text-gray-900">Onboarding Officer</h3>
                         <p class="text-gray-600 font-medium mb-1">Traction Fintech | London</p>
                         <p class="text-gray-400 text-xs uppercase tracking-widest">Jun 2025 - Nov 2025</p>
                     </div>
-                    <div class="md:w-1/2 md:pl-12 pl-8 mt-4 md:mt-0">
+                    <div class="md:w-1/2 md:pl-16 pl-12 mt-4 md:mt-0">
                         <p class="text-gray-600 leading-relaxed text-sm">Focused on data integrity and process engineering. Saved 400+ annual hours by automating error reporting and streamlining client onboarding.</p>
                     </div>
                 </div>
 
-                <!-- Timeline Item 2 -->
+                <!-- Timeline Item 2: SplitTrip (Founder) -->
                 <div class="relative flex flex-col md:flex-row items-start timeline-item opacity-0 transform translate-y-8">
-                    <div class="absolute -left-2.5 md:left-1/2 md:-ml-2.5 w-5 h-5 bg-[#002D5B] border-4 border-white shadow-md rounded-full z-10"></div>
-                    
-                    <div class="md:w-1/2 md:pr-12 md:text-right pl-8 md:pl-0 hidden md:block">
-                        <p class="text-gray-600 leading-relaxed text-sm">Managed central flow for UK & Europe. Led 35 specialists. Improved on-time dispatch by 17% across 8 Fulfillment Centers.</p>
+                    <div class="absolute -left-5 md:left-1/2 md:-ml-5 w-10 h-10 rounded-full z-10 timeline-icon-wrapper flex items-center justify-center text-[#002D5B]">
+                        <i data-lucide="rocket" class="w-5 h-5"></i>
                     </div>
-                    <div class="md:w-1/2 md:pl-12 pl-8">
-                        <h3 class="text-xl font-bold text-gray-900">Area Manager (ECFT)</h3>
-                        <p class="text-gray-600 font-medium mb-1">Amazon | Tilbury</p>
-                        <p class="text-gray-400 text-xs uppercase tracking-widest">Dec 2023 - July 2024</p>
-                        <p class="text-gray-600 leading-relaxed text-sm md:hidden mt-4">Managed central flow for UK & Europe. Led 35 specialists. Improved on-time dispatch by 17% across 8 Fulfillment Centers.</p>
+                    
+                    <div class="md:w-1/2 md:pr-16 md:text-right pl-12 md:pl-0 hidden md:block">
+                        <p class="text-gray-600 leading-relaxed text-sm">Founded and designed the UX/UI for a travel application. Managed a team of 7 developers, drove product quality, and achieved 5000+ signups through strategic marketing.</p>
+                    </div>
+                    <div class="md:w-1/2 md:pl-16 pl-12">
+                        <h3 class="text-xl font-bold text-gray-900">Founder & UX Designer</h3>
+                        <p class="text-gray-600 font-medium mb-1">SplitTrip | London</p>
+                        <p class="text-gray-400 text-xs uppercase tracking-widest">Oct 2021 - May 2025</p>
+                        <p class="text-gray-600 leading-relaxed text-sm md:hidden mt-4">Founded and designed the UX/UI for a travel application. Managed a team of 7 developers, drove product quality, and achieved 5000+ signups through strategic marketing.</p>
                     </div>
                 </div>
 
-                <!-- Timeline Item 3 -->
+                <!-- Timeline Item 3: Amazon -->
                 <div class="relative flex flex-col md:flex-row items-start timeline-item opacity-0 transform translate-y-8">
-                    <div class="absolute -left-2.5 md:left-1/2 md:-ml-2.5 w-5 h-5 bg-gray-400 border-4 border-white shadow-md rounded-full z-10"></div>
+                    <div class="absolute -left-5 md:left-1/2 md:-ml-5 w-10 h-10 rounded-full z-10 timeline-icon-wrapper flex items-center justify-center text-[#002D5B]">
+                        <i data-lucide="package" class="w-5 h-5"></i>
+                    </div>
                     
-                    <div class="md:w-1/2 md:pr-12 md:text-right pl-8 md:pl-0">
+                    <div class="md:w-1/2 md:pr-16 md:text-right pl-12 md:pl-0">
+                        <h3 class="text-xl font-bold text-gray-900">Area Manager (ECFT)</h3>
+                        <p class="text-gray-600 font-medium mb-1">Amazon | Tilbury</p>
+                        <p class="text-gray-400 text-xs uppercase tracking-widest">Dec 2023 - July 2024</p>
+                    </div>
+                    <div class="md:w-1/2 md:pl-16 pl-12 mt-4 md:mt-0">
+                        <p class="text-gray-600 leading-relaxed text-sm">Managed central flow for UK & Europe. Led 35 specialists. Improved on-time dispatch by 17% across 8 Fulfillment Centers.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 4: Gorillas -->
+                <div class="relative flex flex-col md:flex-row items-start timeline-item opacity-0 transform translate-y-8">
+                    <div class="absolute -left-5 md:left-1/2 md:-ml-5 w-10 h-10 rounded-full z-10 timeline-icon-wrapper flex items-center justify-center text-[#002D5B]">
+                        <i data-lucide="zap" class="w-5 h-5"></i>
+                    </div>
+                    
+                    <div class="md:w-1/2 md:pr-16 md:text-right pl-12 md:pl-0 hidden md:block">
+                        <p class="text-gray-600 leading-relaxed text-sm">Oversaw Dark Store operations (Chelsea/South Ken). Improved KPIs by 7.86%. Managed delivery promise time and service levels.</p>
+                    </div>
+                    <div class="md:w-1/2 md:pl-16 pl-12">
                         <h3 class="text-xl font-bold text-gray-900">Operations Supervisor</h3>
                         <p class="text-gray-600 font-medium mb-1">Gorillas Technology | London</p>
                         <p class="text-gray-400 text-xs uppercase tracking-widest">Nov 2021 - Feb 2023</p>
-                    </div>
-                    <div class="md:w-1/2 md:pl-12 pl-8 mt-4 md:mt-0">
-                        <p class="text-gray-600 leading-relaxed text-sm">Oversaw Dark Store operations (Chelsea/South Ken). Improved KPIs by 7.86%. Managed delivery promise time and service levels.</p>
+                        <p class="text-gray-600 leading-relaxed text-sm md:hidden mt-4">Oversaw Dark Store operations (Chelsea/South Ken). Improved KPIs by 7.86%. Managed delivery promise time and service levels.</p>
                     </div>
                 </div>
+
+                <!-- Timeline Item 5: Tresmark -->
+                <div class="relative flex flex-col md:flex-row items-start timeline-item opacity-0 transform translate-y-8">
+                    <div class="absolute -left-5 md:left-1/2 md:-ml-5 w-10 h-10 rounded-full z-10 timeline-icon-wrapper flex items-center justify-center text-[#002D5B]">
+                        <i data-lucide="layout" class="w-5 h-5"></i>
+                    </div>
+                    
+                    <div class="md:w-1/2 md:pr-16 md:text-right pl-12 md:pl-0">
+                        <h3 class="text-xl font-bold text-gray-900">Lead UX/UI Designer</h3>
+                        <p class="text-gray-600 font-medium mb-1">Tresmark | Karachi</p>
+                        <p class="text-gray-400 text-xs uppercase tracking-widest">May 2019 - Oct 2021</p>
+                    </div>
+                    <div class="md:w-1/2 md:pl-16 pl-12 mt-4 md:mt-0">
+                        <p class="text-gray-600 leading-relaxed text-sm">Designed digital workspaces (Web & iOS SaaS). Decreased bounce rate by ~19% through strategic UX improvements.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- Footer / CTA -->
-    <section id="contact" class="bg-[#002D5B] text-white py-24 relative overflow-hidden">
+    <section id="contact" class="bg-[#111827] text-white py-24 relative overflow-hidden">
         <!-- Decoration -->
-        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#E30613] via-[#E30613] to-[#002D5B]"></div>
-        <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-[#E30613] opacity-10 rounded-full blur-3xl"></div>
+        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#002D5B] via-[#005EB8] to-[#002D5B]"></div>
+        <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-[#002D5B] opacity-10 rounded-full blur-3xl"></div>
 
         <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
             <h2 class="text-4xl md:text-6xl font-bold mb-6 brand-font uppercase">Let's Build Together</h2>
@@ -505,35 +551,37 @@
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left max-w-3xl mx-auto">
                 <a href="mailto:moizrizwan94@hotmail.com" class="bg-white/5 hover:bg-white/10 p-6 rounded-sm border border-white/10 transition-all group">
-                    <i data-lucide="mail" class="w-6 h-6 text-[#E30613] mb-4"></i>
+                    <i data-lucide="mail" class="w-6 h-6 text-blue-400 mb-4"></i>
                     <p class="text-xs text-gray-400 uppercase tracking-wider mb-1">Email</p>
-                    <p class="font-bold text-sm truncate group-hover:text-[#E30613] transition-colors">moizrizwan94@hotmail.com</p>
+                    <p class="font-bold text-sm truncate group-hover:text-blue-400 transition-colors">moizrizwan94@hotmail.com</p>
                 </a>
                 
                 <div class="bg-white/5 p-6 rounded-sm border border-white/10">
-                    <i data-lucide="phone" class="w-6 h-6 text-[#E30613] mb-4"></i>
+                    <i data-lucide="phone" class="w-6 h-6 text-blue-400 mb-4"></i>
                     <p class="text-xs text-gray-400 uppercase tracking-wider mb-1">Phone</p>
                     <p class="font-bold text-sm">+44 7853 204148</p>
                 </div>
 
                 <div class="bg-white/5 p-6 rounded-sm border border-white/10">
-                    <i data-lucide="map-pin" class="w-6 h-6 text-[#E30613] mb-4"></i>
+                    <i data-lucide="map-pin" class="w-6 h-6 text-blue-400 mb-4"></i>
                     <p class="text-xs text-gray-400 uppercase tracking-wider mb-1">Location</p>
                     <p class="font-bold text-sm">Watford, UK</p>
                 </div>
             </div>
 
             <div class="mt-16 text-center">
-                <button class="bg-[#E30613] text-white px-10 py-4 font-bold uppercase tracking-widest text-sm rounded-sm hover:bg-[#c40510] transition-colors shadow-lg hover:shadow-red-900/50">
+                <a href="Abdul_Moiz_Janjua___Amazon.pdf" download class="inline-block bg-[#002D5B] text-white px-10 py-4 font-bold uppercase tracking-widest text-sm rounded-sm hover:bg-[#001f3f] transition-colors shadow-lg hover:shadow-blue-900/50">
                     Download Full Resume (PDF)
-                </button>
+                </a>
             </div>
 
             <div class="mt-20 pt-8 border-t border-white/10 text-xs text-blue-400 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p>&copy; 2026 Abdul Moiz Janjua. Crafted for SIG UK Application.</p>
-                <div class="flex gap-4">
-                    <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
-                    <a href="#" class="hover:text-white transition-colors">Portfolio</a>
+                <div class="flex gap-4 items-center">
+                    <a href="https://linkedin.com/in/moizjanjua" target="_blank" class="hover:text-white transition-colors flex items-center gap-2 group">
+                        <i data-lucide="linkedin" class="w-4 h-4 group-hover:text-[#0077b5] transition-colors"></i>
+                        LinkedIn
+                    </a>
                 </div>
             </div>
         </div>
